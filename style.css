@@ -72,6 +72,26 @@ img {
   letter-spacing: 0.2px;
 }
 
+.brand-logo {
+  display: block;
+  height: 68px;
+  object-fit: contain;
+  width: auto;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
 .brand-mark {
   align-items: center;
   background: linear-gradient(135deg, var(--pink), var(--purple), var(--gold));
@@ -670,8 +690,8 @@ h3 {
     padding: 14px 16px;
   }
 
-  .brand-text {
-    font-size: 15px;
+  .brand-logo {
+    height: 52px;
   }
 
   .hero {
@@ -694,5 +714,234 @@ h3 {
   .hero-image-wrap,
   .about-image {
     height: 340px;
+  }
+}
+
+
+/* Mobile friendly improvements */
+html,
+body {
+  max-width: 100%;
+  min-width: 0;
+}
+
+main,
+section,
+.navbar,
+.hero-content,
+.hero-card,
+.beauty-card,
+.booking-card,
+.contact-grid,
+.gallery-grid,
+.review-grid,
+.service-grid,
+.trust-strip {
+  min-width: 0;
+}
+
+.btn,
+.nav-cta,
+.service-book,
+.booking-form input,
+.booking-form select,
+.booking-form button {
+  min-height: 44px;
+}
+
+@media (max-width: 1024px) {
+  .navbar {
+    max-width: 100%;
+  }
+
+  .brand-logo {
+    max-width: 260px;
+  }
+
+  .section-space {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .navbar {
+    gap: 12px;
+  }
+
+  .brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand-logo {
+    height: 50px;
+    max-width: 210px;
+  }
+
+  .menu-toggle {
+    flex: 0 0 auto;
+  }
+
+  .nav-links {
+    left: 16px;
+    right: 16px;
+    top: 76px;
+    z-index: 100;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 54px;
+  }
+
+  .hero-actions,
+  .btn {
+    width: 100%;
+  }
+
+  .hero-stats div {
+    text-align: center;
+  }
+
+  .beauty-card {
+    border-radius: 30px;
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  .hero-image-wrap {
+    border-radius: 24px;
+    height: 420px;
+  }
+
+  .about-image {
+    height: 420px;
+  }
+
+  .booking-card {
+    border-radius: 30px;
+  }
+
+  .map-card {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 14px;
+  }
+
+  .brand-logo {
+    height: 44px;
+    max-width: 185px;
+  }
+
+  .nav-links {
+    left: 12px;
+    right: 12px;
+    top: 68px;
+  }
+
+  h1 {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  .hero-text,
+  .section-title p,
+  .about-content p,
+  .booking-card p,
+  .service-card p,
+  .review-card p,
+  .contact-card p {
+    font-size: 16px;
+  }
+
+  .section-space {
+    padding: 58px 14px;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .hero-image-wrap,
+  .about-image {
+    height: 310px;
+  }
+
+  .service-photo {
+    height: 210px;
+  }
+
+  .trust-strip {
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  .booking-card {
+    padding: 22px;
+  }
+
+  .contact-card,
+  .review-card {
+    padding: 22px;
+  }
+
+  .whatsapp-float {
+    bottom: 16px;
+    height: 54px;
+    right: 16px;
+    width: 54px;
+  }
+
+  .whatsapp-float svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  .footer {
+    padding-bottom: 88px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-logo {
+    max-width: 150px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .hero-image-wrap,
+  .about-image {
+    height: 280px;
   }
 }

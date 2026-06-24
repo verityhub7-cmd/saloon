@@ -53,3 +53,28 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 reveals.forEach((element) => observer.observe(element));
+
+
+document.addEventListener('click', function (event) {
+  const navLinks = document.getElementById('navLinks');
+  const menuToggle = document.getElementById('menuToggle');
+  if (!navLinks || !menuToggle) return;
+
+  const clickedInsideMenu = navLinks.contains(event.target);
+  const clickedToggle = menuToggle.contains(event.target);
+
+  if (!clickedInsideMenu && !clickedToggle && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+document.querySelectorAll('#navLinks a').forEach(function (link) {
+  link.addEventListener('click', function () {
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+    if (!navLinks || !menuToggle) return;
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
